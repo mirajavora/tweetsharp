@@ -253,26 +253,7 @@ namespace TweetSharp
 
             SetTwitterClientInfo(request);
 
-            // A little hacky, but these URLS have never changed
-            if (path.Contains("account/update_profile_background_image") ||
-                path.Contains("account/update_profile_image"))
-            {
-                PrepareUpload(request, path);
-            }
-
             return request;
-        }
-
-        private static void PrepareUpload(RestBase request, string path)
-        {
-            //account/update_profile_image.json?image=[FILE_PATH]&include_entities=1
-            var startIndex = path.IndexOf("?image=", StringComparison.Ordinal) + 7;
-            var endIndex = path.LastIndexOf("&", StringComparison.Ordinal);
-            var uri = path.Substring(startIndex, endIndex - startIndex);
-            path = path.Replace(string.Format("image={0}&", uri), "");
-            request.Path = path;
-            request.Method = WebMethod.Post;
-            request.AddFile("image", Path.GetFileName(uri), Path.GetFullPath(uri), "multipart/form-data");
         }
 
         private void SetTwitterClientInfo(RestBase request)
@@ -534,6 +515,17 @@ namespace TweetSharp
         {
             return WithHammock<T>(method, ResolveUrlSegments(path, segments.ToList()));
         }
+
+        private T WithHammockIncludeFile<T>(WebMethod method, string path, string fileAttributeName, string filePath, params object[] segments)
+        {
+            var request = PrepareHammockQuery(ResolveUrlSegments(path, segments.ToList()));
+            request.AddFile(fileAttributeName, Path.GetFileName(filePath), filePath);
+            request.Method = method;
+
+            return WithHammockImpl<T>(request);
+        }
+
+
 
         private T WithHammockImpl<T>(RestRequest request)
         {

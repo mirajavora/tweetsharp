@@ -3599,13 +3599,13 @@ namespace TweetSharp
         
 		public virtual TwitterUser UpdateProfileImage(string imagePath)
 		{
-			return WithHammock<TwitterUser>(WebMethod.Post, "account/update_profile_image", FormatAsString, "?image_path=", imagePath);
+            return WithHammockIncludeFile<TwitterUser>(WebMethod.Post, "account/update_profile_image", "image", imagePath, FormatAsString);
 		}
 
         
 		public virtual TwitterUser UpdateProfileBackgroundImage(string imagePath)
 		{
-			return WithHammock<TwitterUser>(WebMethod.Post, "account/update_profile_background_image", FormatAsString, "?image_path=", imagePath);
+            return WithHammockIncludeFile<TwitterUser>(WebMethod.Post, "account/update_profile_background_image", "image", imagePath, FormatAsString);
 		}
 
         
