@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetSharp", "net40\TweetSharp.Next\TweetSharp.csproj", "{10BFAA13-B836-4B37-B2D3-D4FEB3F3C484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetSharp.Tests", "net40\TweetSharp.Next.Tests\TweetSharp.Tests.csproj", "{D108B521-B7E1-4ED4-AB38-27A6C9685AF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET 4.0", ".NET 4.0", "{A22A425B-6F70-42C1-82C1-C2DD2CB4330C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{A6320B84-C7A3-452B-9FC7-3978761DE952}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F0C51C5C-F9A7-4108-93C2-6C60CC4356F7}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\clean.bat = ..\clean.bat
+		..\pack-nuget.bat = ..\pack-nuget.bat
+		..\tweetsharp.nuspec = ..\tweetsharp.nuspec
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10BFAA13-B836-4B37-B2D3-D4FEB3F3C484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10BFAA13-B836-4B37-B2D3-D4FEB3F3C484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10BFAA13-B836-4B37-B2D3-D4FEB3F3C484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10BFAA13-B836-4B37-B2D3-D4FEB3F3C484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D108B521-B7E1-4ED4-AB38-27A6C9685AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D108B521-B7E1-4ED4-AB38-27A6C9685AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D108B521-B7E1-4ED4-AB38-27A6C9685AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D108B521-B7E1-4ED4-AB38-27A6C9685AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{10BFAA13-B836-4B37-B2D3-D4FEB3F3C484} = {A22A425B-6F70-42C1-82C1-C2DD2CB4330C}
+		{A6320B84-C7A3-452B-9FC7-3978761DE952} = {A22A425B-6F70-42C1-82C1-C2DD2CB4330C}
+		{D108B521-B7E1-4ED4-AB38-27A6C9685AF6} = {A6320B84-C7A3-452B-9FC7-3978761DE952}
+	EndGlobalSection
+EndGlobal
